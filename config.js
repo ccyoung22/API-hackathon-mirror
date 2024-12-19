@@ -13,10 +13,9 @@ export async function getMovies() {
 //listen for request (titles)
 export async function getMovieTitle(search) {
   const lowercase = search.toLowerCase();
-  return data.filter(({ title })=>{
-    return (title.toLowerCase())
-  })
-  
+  return data.filter(({ title }) => {
+    return title.toLowerCase().includes(lowercase);
+  });
 }
 //Access the database
 //grab the data by title
