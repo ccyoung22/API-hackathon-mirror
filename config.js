@@ -8,3 +8,17 @@ export async function getMovies() {
 //create a export async function
 //that grabs the whole data list
 //and returns it
+
+//Request by Title
+//listen for request (titles)
+export async function getMovieTitle(search) {
+  const lowercase = search.toLowerCase();
+  return data.filter(({ title })=>{
+    return (title.toLowerCase())
+  })
+  
+}
+//Access the database
+//grab the data by title
+//process data
+//return data
