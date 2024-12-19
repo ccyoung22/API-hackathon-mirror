@@ -1,5 +1,5 @@
 //import the data
-import { data } from "./database.json";
+import { data } from "./database.js";
 
 export async function getMovies() {
   return data;

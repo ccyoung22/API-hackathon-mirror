@@ -2,7 +2,7 @@
 import express, { request } from "express";
 
 //import database
-import movies from "./database.json" with { type: "json"};
+//import { data } from "./database.js" //with { type: "json"};
 
 //define port
 const PORT = 3000;
@@ -33,3 +33,6 @@ app.get("/", async function (req, res) {
 //access database
 //process request
 //generate response
+app.listen(PORT, ()=>{
+  console.log("Server is running on http://localhost:3000")
+})
