@@ -1,0 +1,16 @@
+{
+  "name": "week-4-rest-api-hackathon-oac-tree",
+  "version": "1.0.0",
+  "description": "Feel free to delete this and start from scratch.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
