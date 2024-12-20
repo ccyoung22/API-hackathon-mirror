@@ -25,7 +25,7 @@ app.get("/", async function (req, res) {
 
 
 //listen for a request by id
-app.get("/:id", async function (req, res) {
+app.get("/id/:id", async function (req, res) {
   try {
     // grab the id from the user querey paramaeter
     const id = parseInt(req.params.id);
@@ -41,20 +41,24 @@ app.get("/:id", async function (req, res) {
   }
 });
 
-app.get("/:title", async function (req, res) {
+app.get("/title/:title", async function (req, res) {
   try {
-    const { title } = req.query;
+    const { title } = req.params;
     if (!title) {
-      return res.status(400).json({ message: "Title query parameter is required" });
+      return res.status(400).json({ message: "Title parameter is required" });
     }
     const movie = await getMovieTitle(title);
-    res.json(movie);
+    if (!movie) {
+      return res.status(404).json({ message: "Movie not found" });
+    }
+    res.json(movie); // Send a single movie
   } catch (error) {
     res.status(500).json({
       message: error.message,
     });
   }
-});
+})
+//this is a test
 
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:3000");
